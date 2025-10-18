@@ -12,6 +12,8 @@
 </head>
 <body>
 <!-- 🌸 Thiệp cưới -->
+<!-- 🔊 Nút điều khiển nhạc -->
+<button id="music-btn">🔊</button>
 <div class="container floral-frame">
 <div class="corner-top-right"></div>
 <div class="corner-bottom-left"></div>
@@ -120,8 +122,6 @@
 <div id="lightbox">
 <img alt="Phóng to ảnh" loading="lazy" src=""/>
 </div>
-<!-- 🔊 Nút điều khiển nhạc -->
-<button id="music-btn">🔊</button>
 <script>
 	  // Countdown
 	  var weddingDate = '11/15/2025 16:30:00';
@@ -141,6 +141,11 @@
 
   // Đặt âm lượng vừa phải
   bgMusic.volume = 0.7;
+document.addEventListener("click", () => {
+  if (bgMusic.paused) {
+    bgMusic.play().catch(() => {});
+  }
+}, { once: true });
 
   btn.addEventListener("click", () => {
     if (bgMusic.paused) {
@@ -153,6 +158,9 @@
       btn.textContent = "🔇";
     }
   });
+	
+
+
 
 	  // Hiệu ứng fade-in khi cuộn xuống
 	document.addEventListener("scroll", () => {

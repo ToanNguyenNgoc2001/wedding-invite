@@ -1,0 +1,371 @@
+/* 🎀 FONT & MÀU CHỦ ĐẠO */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Lora&family=Great+Vibes&display=swap');
+
+body {
+  background: linear-gradient(to bottom right, #fff6f8, #ffeaf2);
+  font-family: 'Playfair Display', 'Lora', serif;
+  color: #4a3b3b;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  position: relative;
+  scroll-behavior: smooth;
+}
+
+/* 🌸 CONTAINER CHÍNH */
+.container,
+.floral-frame {
+  position: relative;
+  max-width: 850px;
+  margin: 50px auto;
+  background: rgba(255, 255, 255, 0.92);
+  border-radius: 20px;
+  padding: clamp(20px, 4vw, 40px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 1s ease;
+}
+
+/* ✨ KHI HIỆN TRÊN MÀN HÌNH (CUỘN LÊN HAY XUỐNG) */
+.container.visible,
+.love-row.visible,
+.info-section.visible,
+.event-highlight.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 🌺 KHUNG HOA */
+.floral-frame {
+  border-left: 4px solid #a04f69;
+  border-bottom: 4px solid #a04f69;
+}
+
+
+/* 💖 TIÊU ĐỀ CHÍNH */
+	h1 {
+	  font-family: 'Great Vibes', cursive;
+	  color: #c06a84;
+	  font-size: clamp(2.5rem, 6vw, 3.8rem);
+	  text-align: center;
+	  margin-bottom: 10px;
+	}
+
+	  from { text-shadow: 0 0 4px rgba(192,106,132,0.3); }
+	  to { text-shadow: 0 0 12px rgba(192,106,132,0.6); }
+	}
+
+h2 {
+  text-align: center;
+  color: #996E6D;
+  font-size: clamp(1.4rem, 4vw, 2.2rem);
+  margin-top: 0;
+  font-weight: 600;
+}
+
+h3 {
+  color: #a04f69;
+  text-align: center;
+  font-size: clamp(1.2rem, 3vw, 1.8rem);
+  margin-top: 25px;
+}
+
+/* 📅 THÔNG TIN LỄ CƯỚI */
+.info-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: clamp(1.2rem, 3vw, 1.6rem); /* Tăng cỡ chữ */
+  line-height: 1.8;
+  margin-top: 20px;
+  background: #fff9fb;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  color: #333;
+}
+
+.info-section strong {
+  color: #a04f69;
+  font-weight: 600;
+}
+
+/* Chia layout nhà trai – nhà gái */
+.family-layout {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  width: 100%;
+  max-width: 800px;
+  margin: 20px auto;
+  text-align: left;
+}
+
+.family-layout .family-side {
+  flex: 1;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+  text-align: center; /* Căn giữa nội dung */
+}
+
+.family-layout .family-side h3 {
+  color: #a04f69;
+  margin-bottom: 10px;
+}
+
+/* Thời gian & địa điểm nổi bật */
+
+
+.event-highlight {
+  font-size: clamp(1.6rem, 4vw, 2rem);
+  color: #dc143c;
+  margin-top: 30px;
+  text-align: center;
+  background: #fff;
+  border-top: 3px solid #dc143c;
+  border-bottom: 3px solid #dc143c;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+.event-highlight img {
+  max-width: 100%;       /* Không vượt quá chiều rộng container */
+  height: auto;          /* Giữ tỉ lệ ảnh gốc */
+  display: block;        /* Căn giữa ảnh */
+  margin: 20px auto;     /* Tạo khoảng cách và căn giữa */
+  border-radius: 12px;   /* Bo góc nhẹ */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* Đổ bóng nhẹ */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.event-highlight img:hover {
+  transform: scale(1.03); /* Phóng to nhẹ khi hover */
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+
+/* 📸 BỘ ẢNH CƯỚI */
+/* 📸 ẢNH CƯỚI */
+.wedding-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.wedding-gallery img {
+  width: calc(25% - 12px);
+  height: 250px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.wedding-gallery img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+}
+
+/* 🌙 HIỆU ỨNG PHÓNG TO ẢNH (LIGHTBOX) */
+#lightbox {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background: rgba(0,0,0,0.8);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+#lightbox img {
+  max-width: 95%;
+  max-height: 90%;
+  border-radius: 14px;
+  box-shadow: 0 0 35px rgba(255,255,255,0.2);
+  animation: zoomIn 0.4s ease;
+  transition: transform 0.3s ease;
+}
+
+@keyframes zoomIn {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+/* 🔙 THU NHỎ KHI CLICK */
+#lightbox.show { display: flex; }
+
+
+/* ❤️ CÂU CHUYỆN TÌNH YÊU */
+
+.love-section {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  margin: 60px auto;
+}
+
+.love-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 30px;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 1s ease;
+}
+
+/* 🌹 HÀNG CHẴN: đảo vị trí (ảnh phải – chữ trái) */
+.love-row:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+/* 🌸 HÌNH ẢNH TRONG LOVE STORY */
+.love-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 280px;
+}
+
+.love-image img {
+  width: 100%;
+  max-width: 380px;
+  height: auto; /* ✅ tự co theo tỉ lệ ảnh gốc */
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.4s ease, box-shadow 0.3s ease;
+  object-fit: contain; /* ✅ giữ nguyên ảnh, không cắt */
+}
+
+.love-image img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+}
+
+/* 🌷 PHẦN NỘI DUNG */
+.love-text {
+  flex: 1;
+  min-width: 280px;
+  background: #fffafc;
+  padding: 25px 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #5a4a4a;
+}
+
+/* 💫 KHI CUỘN HIỆN LÊN */
+.love-row.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* 🧾 QR CODE */
+#qr-codes {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+#qr-codes img {
+  width: clamp(100px, 20vw, 180px);
+  border: 3px solid #e2b4c2;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#qr-codes img:hover {
+  transform: scale(1.07);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+}
+/* 🌸 CẢM ƠN CUỐI THIỆP */
+.thank-you {
+  font-family: 'Great Vibes', cursive;
+  text-align: center;
+  font-size: clamp(2rem, 5vw, 3rem);
+  color: #c06a84;
+  margin: 50px 0 30px;
+  letter-spacing: 1px;
+  text-shadow: 0 0 6px rgba(192,106,132,0.3), 0 0 12px rgba(192,106,132,0.2);
+}
+
+/* ✨ Hiệu ứng ánh sáng mờ */
+  from { opacity: 0.8; transform: scale(1); text-shadow: 0 0 4px rgba(192,106,132,0.25); }
+  to { opacity: 1; transform: scale(1.05); text-shadow: 0 0 12px rgba(192,106,132,0.4); }
+}
+
+#music-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #ffcad4;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 22px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: transform 0.2s, box-shadow 0.3s;
+  z-index: 9999;
+}
+#music-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.1);
+}	
+
+/* 📱 RESPONSIVE CHO MOBILE */
+@media (max-width: 768px) {
+  .love-row {
+    flex-direction: column !important; /* ✅ luôn dọc khi mobile */
+  }
+  .love-image img {
+    height: 240px;
+    max-width: 100%;
+  }
+}	
+
+/* 🌿 RESPONSIVE */
+/* 📱 RESPONSIVE CHO MOBILE */
+@media (max-width: 768px) {
+  .container {
+    max-width: 95%;
+    padding: 20px;
+  }
+
+  .love-row {
+    flex-direction: column !important;
+    gap: 30px;
+  }
+
+  .love-image img {
+    height: auto;
+    max-width: 100%;
+  }
+
+  .wedding-gallery img {
+    width: 45%;
+    height: auto;
+  }
+
+  .floral-frame::before,
+  .floral-frame::after,
+  .floral-frame .corner-top-right,
+  .floral-frame .corner-bottom-left {
+    width: 70px;
+    height: 70px;
+  }
+
+}

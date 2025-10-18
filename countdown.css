@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&family=Lora&display=swap');
+
+ul#hitungmundur {
+  list-style: none;
+  margin: 30px 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: clamp(10px, 3vw, 20px);
+  font-family: 'Playfair Display', 'Lora', serif;
+  flex-wrap: wrap;
+}
+
+ul#hitungmundur li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #fff;
+  background: linear-gradient(145deg, #e89cae, #c37a93);
+  padding: clamp(10px, 2vw, 14px) clamp(14px, 3vw, 20px);
+  border-radius: 14px;
+  min-width: clamp(60px, 15vw, 80px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+ul#hitungmundur li:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.1);
+}
+
+ul#hitungmundur li span {
+  font-size: clamp(20px, 6vw, 38px);
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+ul#hitungmundur li.separator {
+  font-size: clamp(18px, 5vw, 36px);
+  line-height: 1.2;
+  background: none;
+  color: #c37a93;
+  padding: 0;
+  margin: 0 clamp(3px, 1vw, 5px);
+}
+
+ul#hitungmundur li p {
+  font-size: clamp(10px, 3vw, 14px);
+  margin-top: 5px;
+  color: #fff;
+}
+
+/* Media Queries cho màn hình nhỏ */
+@media (max-width: 768px) {
+  ul#hitungmundur {
+    gap: 10px;
+  }
+  ul#hitungmundur li {
+    min-width: 60px;
+    padding: 8px 12px;
+  }
+}

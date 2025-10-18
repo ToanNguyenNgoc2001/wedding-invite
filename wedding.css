@@ -371,14 +371,71 @@ h3 {
 }
 
 
+
+/* ✅ Giữ font và căn giữa nội dung trên mọi thiết bị */
+.info-section h2,
+.info-section h3,
+.info-section p,
+.event-highlight p {
+  text-align: center;
+  word-break: keep-all;
+  white-space: normal;
+}
+
+/* ✅ Responsive font cho mobile */
 @media (max-width: 768px) {
-  .info-section h2,
-  .info-section h3,
-  .info-section p {
+  body {
+    font-size: 16px;
+  }
+
+  .info-section {
     font-size: 1rem;
-    text-align: center;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+  }
+
+  h1, h2, h3 {
+    font-size: 1.2rem;
+  }
+
+  .event-highlight {
+    font-size: 1.1rem;
+  }
+}
+
+
+/* ✅ Fix layout tràn viền cho phần giới thiệu hai gia đình */
+.family-layout {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.family-layout .family-side {
+  flex: 1 1 300px;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* ✅ Fix layout tràn viền cho phần thời gian và địa điểm */
+.event-highlight {
+  box-sizing: border-box;
+  padding: 20px;
+  margin: 0 auto;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+/* ✅ Responsive fix */
+@media (max-width: 768px) {
+  .family-layout {
+    flex-direction: column;
+    padding: 0 10px;
+  }
+
+  .event-highlight {
+    padding: 16px;
   }
 }

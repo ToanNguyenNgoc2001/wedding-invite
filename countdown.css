@@ -60,3 +60,16 @@ ul#hitungmundur li p {
     padding: 8px 12px;
   }
 }
+
+/* ✅ Fix countdown layout không bị xuống dòng */
+ul#hitungmundur {
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+
+ul#hitungmundur li {
+  text-align: center;
+  white-space: nowrap;
+}

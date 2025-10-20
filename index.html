@@ -12,8 +12,6 @@
 </head>
 <body>
 <!-- 🌸 Thiệp cưới -->
-<!-- 🔊 Nút điều khiển nhạc -->
-<button id="music-btn">🔊</button>
 <div class="container floral-frame">
 <div class="corner-top-right"></div>
 <div class="corner-bottom-left"></div>
@@ -115,7 +113,8 @@
 <img loading="lazy" src="Image/QRToan.jpg" style="width:200px;"/>
 </div>
 </div>
-
+<!-- 🔊 Nút điều khiển nhạc -->
+<button id="music-btn">🔊</button>
 <audio id="bg-music" loop="">
 <source src="Image/BeautifulInWhite.mp3" type="audio/mpeg"/>
 </audio>
@@ -135,44 +134,46 @@
 	  }, function () {
 		alert('💐 Đã đến giờ lễ cưới rồi!');
 	  });
-	  
-  const btn = document.getElementById("music-btn");
+
+
   const bgMusic = document.getElementById("bg-music");
+  const btn = document.getElementById("music-btn");
 
-  // Đặt âm lượng vừa phải
   bgMusic.volume = 0.7;
-document.addEventListener("click", () => {
-  if (bgMusic.paused) {
-    bgMusic.play().catch(() => {});
-  }
-}, { once: true });
 
+  // Nút điều khiển nhạc
   btn.addEventListener("click", () => {
     if (bgMusic.paused) {
       bgMusic.play().then(() => {
         console.log("🎶 Nhạc đang phát:", bgMusic.src);
+        btn.textContent = "🔊";
       }).catch(err => console.error("Không phát được nhạc:", err));
-      btn.textContent = "🔊";
     } else {
       bgMusic.pause();
       btn.textContent = "🔇";
     }
   });
-	
 
 
-
-	  // Hiệu ứng fade-in khi cuộn xuống
-	document.addEventListener("scroll", () => {
-	  document.querySelectorAll(".container, .info-section, .love-row, .family-side, .event-highlight, #hitungmundur")
-		.forEach(el => {
-		  const rect = el.getBoundingClientRect();
-		  if (rect.top < window.innerHeight - 100 && rect.bottom > 100) {
-			el.classList.add("visible");
-		  } else {
-			el.classList.remove("visible");
-		  }
+	window.addEventListener("load", () => {
+	  const selectors = ['.container'];
+	  selectors.forEach(selector => {
+		document.querySelectorAll(selector).forEach(el => {
+		  el.classList.add("visible");
 		});
+	  });
+
+	  document.addEventListener("scroll", () => {
+		document.querySelectorAll(".container, .info-section, .love-row, .family-side, .event-highlight, #hitungmundur")
+		  .forEach(el => {
+			const rect = el.getBoundingClientRect();
+			if (rect.top < window.innerHeight - 100 && rect.bottom > 100) {
+			  el.classList.add("visible");
+			} else {
+			  el.classList.remove("visible");
+			}
+		  });
+	  });
 	});
 	document.addEventListener("DOMContentLoaded", () => {
 	  const galleryImages = document.querySelectorAll(".wedding-gallery img, .event-highlight img, .love-image img");
